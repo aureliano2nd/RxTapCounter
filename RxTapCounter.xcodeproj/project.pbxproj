@@ -12,9 +12,13 @@
 		936C186D209248FC0021705D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936C186B209248FC0021705D /* Main.storyboard */; };
 		936C186F209248FE0021705D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 936C186E209248FE0021705D /* Assets.xcassets */; };
 		936C1872209248FE0021705D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 936C1870209248FE0021705D /* LaunchScreen.storyboard */; };
+		F04D1138FA4D5CBDD7B5EA88 /* Pods_RxTapCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9034146227C1B1E70DA9FAC8 /* Pods_RxTapCounter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		410FC30AEE618E2D32BDAAD9 /* Pods-RxTapCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTapCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTapCounter/Pods-RxTapCounter.debug.xcconfig"; sourceTree = "<group>"; };
+		6843B0CAE15167DCF3FAC2BA /* Pods-RxTapCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTapCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxTapCounter/Pods-RxTapCounter.release.xcconfig"; sourceTree = "<group>"; };
+		9034146227C1B1E70DA9FAC8 /* Pods_RxTapCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTapCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		936C1864209248FC0021705D /* RxTapCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTapCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		936C1867209248FC0021705D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		936C1869209248FC0021705D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F04D1138FA4D5CBDD7B5EA88 /* Pods_RxTapCounter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5605C6AA49B287DD22CBD826 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				410FC30AEE618E2D32BDAAD9 /* Pods-RxTapCounter.debug.xcconfig */,
+				6843B0CAE15167DCF3FAC2BA /* Pods-RxTapCounter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		936C185B209248FB0021705D = {
 			isa = PBXGroup;
 			children = (
 				936C1866209248FC0021705D /* RxTapCounter */,
 				936C1865209248FC0021705D /* Products */,
+				5605C6AA49B287DD22CBD826 /* Pods */,
+				AF8E387AB1F8EFA7C906115E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = RxTapCounter;
 			sourceTree = "<group>";
 		};
+		AF8E387AB1F8EFA7C906115E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9034146227C1B1E70DA9FAC8 /* Pods_RxTapCounter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 936C1876209248FE0021705D /* Build configuration list for PBXNativeTarget "RxTapCounter" */;
 			buildPhases = (
+				7233BF8D41604037FF25E518 /* [CP] Check Pods Manifest.lock */,
 				936C1860209248FC0021705D /* Sources */,
 				936C1861209248FC0021705D /* Frameworks */,
 				936C1862209248FC0021705D /* Resources */,
+				EA74A720798D988B4E4EEB06 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7233BF8D41604037FF25E518 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxTapCounter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA74A720798D988B4E4EEB06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxTapCounter/Pods-RxTapCounter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxTapCounter/Pods-RxTapCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		936C1860209248FC0021705D /* Sources */ = {
@@ -278,15 +345,13 @@
 		};
 		936C1877209248FE0021705D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 410FC30AEE618E2D32BDAAD9 /* Pods-RxTapCounter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2P7FWSF8B;
 				INFOPLIST_FILE = RxTapCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.lp.iem.RxTapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +361,13 @@
 		};
 		936C1878209248FE0021705D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6843B0CAE15167DCF3FAC2BA /* Pods-RxTapCounter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q2P7FWSF8B;
 				INFOPLIST_FILE = RxTapCounter/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.lp.iem.RxTapCounter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
